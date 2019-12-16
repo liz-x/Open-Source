@@ -15,6 +15,7 @@ COPY ./sources.list.stretch /etc/apt/sources.list
 # 5. Line `&& :\` is just for better reading and do nothing.
 
 RUN apt-get update \
+    && apt-get apt-transport-https \
     && apt-get install -y iputils-ping vim procps net-tools wget \
     && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
     && apt-get install -y libmcrypt-dev libmemcached-dev libmagickwand-dev libmagickcore-dev \
